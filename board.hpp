@@ -6,7 +6,7 @@
 #include "functions.hpp"
 #include "constants.hpp"
 
-using std::printf;
+using namespace std;
 
 class Board{
 private:
@@ -50,11 +50,17 @@ public:
 	void printBoard(){
 		for(int i=0;i<N;i++){
 			for(int j=0;j<N;j++)
-				std::printf("%7.3f",sW[i][j]);
-			std::puts("");
+				printf("%7.3f",sW[i][j]);
+			puts("");
 		}
 	}
-	
+	void printBoard(FILE *fp){
+		for(int i=0;i<N;i++){
+			for(int j=0;j<N;j++)
+				fprintf(fp,"%7.3f",sW[i][j]);
+			fprintf(fp,"\n");
+		}
+	}
 	void clear(){
 		if(N) delete sW,delete pool,N=0;
 	}

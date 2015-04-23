@@ -3,7 +3,7 @@
 #include "cell.hpp"
 #include "game_frame.hpp"
 
-using std::printf;
+using namespace std;
 
 void someTest(){
 	Board a(20);

@@ -3,7 +3,7 @@
 
 #include <bits/stdc++.h>
 
-using std::printf;
+using namespace std;
 
 template<typename _T> inline _T sqr(_T x){return x*x;}
 

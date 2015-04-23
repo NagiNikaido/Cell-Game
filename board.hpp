@@ -1,6 +1,6 @@
 #ifndef __BOARD_HPP__
 #define __BOARD_HPP__
-
+ 
 #include <bits/stdc++.h>
 #include "random.hpp"
 #include "functions.hpp"

@@ -84,7 +84,7 @@ public:
 						if(tx<0 || ty<0 || tx>=gameSize || ty>=gameSize) t.push_back(-1);
 						else{
 							for(int k=0;k<cellList.size();k++) if(cellList[k].x==tx && cellList[k].y==ty)
-								t.push_back(cellList[k].id);
+								t.push_back(cellList[k].id+1);
 							if(t.size()<=j) t.push_back(0);
 						}
 					}

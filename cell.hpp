@@ -108,7 +108,7 @@ public:
 		vector<pair<int,int>> t;
 		for(int i=0;i<4;i++) if(~otherCells[i]){
 			if(otherCells[i]){
-				if(sup_cur>=sup_need_atk) t.push_back(make_pair(2,otherCells[i]));
+				if(sup_cur>=sup_need_atk) t.push_back(make_pair(2,otherCells[i]-1));
 			}
 			else{
 				if(sup_cur>=sup_need_move) t.push_back(make_pair(1,i));

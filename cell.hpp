@@ -80,7 +80,7 @@ public:
 	
 	double getDamaged(double t_atk){
 		double a_atk=Calc_Damage(t_atk,def);
-		hp-=a_atk;sup_cur=min(sup_cur-sup_need_def,0.);
+		hp-=a_atk;sup_cur=max(sup_cur-sup_need_def,0.);
 		return a_atk;
 	}
 	double makeDamage(){

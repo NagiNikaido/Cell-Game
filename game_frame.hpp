@@ -68,7 +68,6 @@ public:
 			flag=0;
 			for(int i=0;i<cellList.size();i++) if(cellList[i].canMov()){
 				flag=1;refresh();
-				BROADCAST("No.%03d Cell's turn.\n",cellList[i].id);
 				///////
 				
 				vector<int> t;
@@ -163,7 +162,9 @@ public:
 				printf("speed = ");scanf("%lf",&speed);
 				printf("num = ");scanf("%d",&num);
 				
-				sprintf(buf,"log/%s.log",asctime(localtime(&timer)));
+				sprintf(buf,"./log/%s",asctime(localtime(&timer)));
+				sprintf(buf+strlen(buf)-1,".log");
+				for(int i=0;buf[i];i++) if(buf[i]==':') buf[i]='#';
 				logfile=fopen(buf,"w");
 				newGame(size,speed,num);
 				gameLoop();

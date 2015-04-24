@@ -40,7 +40,7 @@ public:
 		sup_need_def=0.23*atk+0.5*def+0.3*spe;
 		sup_need_move=0.6*spe;
 		sup_need_gen=sup_need_base*0.5;
-		sup_bound=5*sup_need_atk;
+		sup_bound=5*(sup_need_atk+sup_need_base);
 		sup_cur=sup_bound;
 		hpLost_hunger=rand.randomReal(0.05,0.1);
 		hpRec_hunger=rand.randomReal(0.075,0.1);

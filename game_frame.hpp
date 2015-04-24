@@ -2,21 +2,11 @@
 #define __GAME_FRAME_H__
 
 #include <bits/stdc++.h>
+#include "platform_settings.hpp"
 #include "board.hpp"
 #include "cell.hpp"
 
 using namespace std;
-
-#include <unistd.h>
-
-#if (defined(__WIN32__) || defined(_WIN32) || defined(__WIN64__) || defined(__WIN64))
-#	include <windows.h>
-#	define SLEEP(MICROSECONDS) Sleep(int(MICROSECONDS))
-#   define CLS  system("cls")
-#else
-#	define SLEEP(MICROSECONDS) usleep(int(1000*(MICROSECONDS)))
-#   define CLS  system("clear")
-#endif
 
 #define BROADCAST(...) printf( __VA_ARGS__ ),fprintf(logfile, __VA_ARGS__ )
 
@@ -165,6 +155,8 @@ public:
 				sprintf(buf,"./log/%s",asctime(localtime(&timer)));
 				sprintf(buf+strlen(buf)-1,".log");
 				for(int i=0;buf[i];i++) if(buf[i]==':') buf[i]='#';
+				
+				MKDIR("./log");
 				logfile=fopen(buf,"w");
 				newGame(size,speed,num);
 				gameLoop();

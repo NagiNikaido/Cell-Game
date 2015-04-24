@@ -8,13 +8,13 @@
 #	include <windows.h>
 #	include <direct.h>
 #	define SLEEP(MICROSECONDS) Sleep(int(MICROSECONDS))
-#   define CLS  system("cls")
+#	define CLS  system("cls")
 #	define MKDIR(DIRNAME) _mkdir(DIRNAME)
 #else
 #	include <sys/stat.h>
 #	include <sys/types.h>
 #	define SLEEP(MICROSECONDS) usleep(int(1000*(MICROSECONDS)))
-#   define CLS  system("clear")
+#	define CLS  system("clear")
 #	define MKDIR(DIRNAME) mkdir(DIRNAME,0777)
 #endif
 

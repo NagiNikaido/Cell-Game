@@ -1,0 +1,12 @@
+$(document).ready(function(){
+	$("#game-board-col").css("height",$("#game-board-col").width().toString());
+	$("#info-col").css("height",$("#game-board-col").width().toString());
+	$("#cell-info-displayer").css("height","60%");
+	$("#game-info-displayer").css("height","40%");
+	$(".game-board-grid").css("height",($("#game-board-col").width()/2).toString());
+});
+$(window).resize(function(){
+	$("#game-board-col").css("height",$("#game-board-col").width().toString());
+	$("#info-col").css("height",$("#game-board-col").width().toString());
+	$(".game-board-grid").css("height",($("#game-board-col").width()/2).toString());
+});
